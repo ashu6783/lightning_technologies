@@ -109,7 +109,8 @@ Before running the project, make sure you have the following installed:
 
 ## Start the JSON server to serve the data:
 
-  json-server --watch db.json --port 5000
+
+## json-server --watch --port 5000 ./data/data.json
 
 ## Running the Application
    Start the React development server:
