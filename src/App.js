@@ -5,7 +5,7 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Navbar, Footer, Header, Sidebar, Settings, UserProfile } from "./components";
 import { Line } from "./components/Charts/Line";
 import { Pie } from "./components/Charts/Pie";
-import { AdminPanel } from "./pages/AdminPanel";
+import  AdminPanel  from "./pages/AdminPanel";
 import Menu1 from "./pages/Menu1";
 import Menu2 from "./pages/Menu2";
 import Menu3 from "./pages/Menu3";

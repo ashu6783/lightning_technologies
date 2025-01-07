@@ -1,6 +1,5 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 
-// Create the Context
 const StateContext = createContext();
 
 const initialState = {
@@ -12,12 +11,23 @@ export const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(false);
   const [isClicked, setIsClicked] = useState(initialState);
   const [screenSize, setScreenSize] = useState(undefined);
+  const [currentMode, setCurrentMode] = useState('Light');
+  const [themeSettings, setThemeSettings] = useState(false);
+  
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('themeMode');
+    if (savedTheme) setCurrentMode(savedTheme);
+  }, []);
+
+  const setMode = (mode) => {
+    setCurrentMode(mode);
+    localStorage.setItem('themeMode', mode);
+  };
 
   const handleClick = (clicked) => {
-    // Toggle the clicked state
-    setIsClicked((prevState) => ({
+    setIsClicked(prevState => ({
       ...initialState,
-      [clicked]: !prevState[clicked], // Toggle the clicked item
+      [clicked]: !prevState[clicked],
     }));
   };
 
@@ -31,6 +41,10 @@ export const ContextProvider = ({ children }) => {
         handleClick,
         screenSize,
         setScreenSize,
+        currentMode,
+        setMode,
+        themeSettings,
+        setThemeSettings
       }}
     >
       {children}
