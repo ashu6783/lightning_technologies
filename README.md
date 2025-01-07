@@ -24,6 +24,10 @@ payment status
 
 few improvements are still left I am working on that for UI..
 
+##challenges faced
+
+Serving the data to the interface using endpoints,came out to it by seeing documents for hosting the mock data locally first.
+
 
 ## Requirements
 
