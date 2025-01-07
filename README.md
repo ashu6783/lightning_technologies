@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+# Lightning Technologies Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a web-based dashboard that provides an interactive and responsive overview of various metrics, including financial data, customer and supplier records, and more. The dashboard dynamically fetches and displays data based on a selected date, and updates in real-time when the user changes the date.
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+- Replicate the dashboard UI as closely as possible to the provided Figma design.
+- Dynamically display data (e.g., payments, net profit, expenses) based on the selected date.
+- When the user changes the date, the dashboard content should update accordingly.
+- Ensure the design is responsive and works well across both desktop and tablet screens.
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Date Filtering:** Data displayed on the dashboard is filtered by the selected date, which is passed through the URL endpoint (e.g., `{{host}}/dashboard?date=12-01-2025`).
+- **Dynamic Data Display:** Metrics such as payments, expenses, net profit, supplier payments, and customer payments are fetched dynamically.
+- **Responsive Design:** The layout is designed to work across desktop and tablet devices.
+- **Charts and Tables:** Visualizations like dynamic charts for payments, expenses, and net profit, and tables for recent supplier and customer payments are included.
+- **Sidebar Navigation & Notification Dropdown:** As shown in the provided Figma design.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Approach
+I chose React for this project to showcase the basics of building dynamic and interactive dashboards. The development was approached in modular steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Layout Structure:
 
-### `npm run build`
+Divided the project into four main sections:
+Sidebar: Contains various navigation links to different sections of the dashboard.
+Navbar: Includes features like search, notifications, profile dropdown, and the title "Springfield Media."
+Settings: Still being worked on to allow theme customization with options for different colors and dark theme support.
+Dashboard Page:
+Dashboard:For displaying data and charts.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Created StatCards for displaying dynamic stats like sales, expenses, net profit, etc.
+Added LineCharts and PieCharts to visually represent data using mock static data.
+The charts were later connected to mock data hosted on JSON Server, where the API endpoint (http://localhost:5000/${selectedEndpoint}) fetches the required data.
+Responsive Design:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The layout is designed to be responsive and work smoothly across desktop and tablet screens.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Theme Support**: Currently working on adding dark theme support and ensuring smooth theme switching based on user preferences.
+The approach focuses on structuring the app in a scalable and maintainable way while adding the necessary dynamic features to make it interactive for users.
 
-### `npm run eject`
+## Project Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Before running the project, make sure you have the following installed:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Node.js** (https://nodejs.org/)
+- **npm** (Node Package Manager)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installing Dependencies
 
-## Learn More
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/lightning-technologies-dashboard.git
+   cd lightning-technologies-dashboard
+2. Install the required dependencies:
+   npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Setup JSON Server (For Data Hosting)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+--Install json-server globally if not already installed:
+  npm install -g json-server
 
-### Code Splitting
+## Create a db.json file in the root of your project with the data you want to serve. For example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+{
+  "data": [
+    {
+      "date": "02-01-2025",
+      "total_sales": "45,451.03",
+      "total_expenses": "75,586.78",
+      "net_profit": "19,989.20",
+      "due_amount": "34,916.86",
+      "payment_received": "53,408.95",
+      "supplier_records": [...],
+      "customer_records": [...],
+      "top_selling_products": [...],
+      "supplier_payments": [...],
+      "customer_payments": [...]
+    }
+  ]
+}(it is provided)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Start the JSON server to serve the data:
 
-### Making a Progressive Web App
+  json-server --watch db.json --port 5000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Running the Application
+   Start the React development server:
+    npm start
 
-### Advanced Configuration
+Open your browser and visit http://localhost:3000 to view the dashboard.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Key Technologies
 
-### Deployment
+React: Used for building the user interface and managing the component lifecycle.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Axios: For making API requests to the backend.
 
-### `npm run build` fails to minify
+Recharts: For generating dynamic charts.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+React Router: For managing routing and navigation within the application.
+
+Date-Fns: For date-related operations and formatting.
+
+JSON Server: For serving mock data during development.
+
+**Syncfusion UI Components**: Utilizes Syncfusion for advanced UI components for a smooth user experience.
+
+
+
+
+
+
+
+
