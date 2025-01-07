@@ -11,7 +11,7 @@ This project is a web-based dashboard that provides an interactive and responsiv
 
 ## Key Features
 
-- **Date Filtering:** Data displayed on the dashboard is filtered by the selected date, which is passed through the URL endpoint (e.g., `{{host}}/dashboard?date=12-01-2025`).
+- **Date Filtering:** Data displayed on the dashboard is filtered by the selected date, which is passed through the URL endpoint (e.g., `{{host}}/dashboard?{endpoint}`).
 - **Dynamic Data Display:** Metrics such as payments, expenses, net profit, supplier payments, and customer payments are fetched dynamically.
 - **Responsive Design:** The layout is designed to work across desktop and tablet devices.
 - **Charts and Tables:** Visualizations like dynamic charts for payments, expenses, and net profit, and tables for recent supplier and customer payments are included.
