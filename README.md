@@ -14,7 +14,15 @@ notifications
 
 ![image](https://github.com/user-attachments/assets/607a24b5-a1c7-4460-b0c9-2cdb7a44a293)
 
+DAY-2
+![image](https://github.com/user-attachments/assets/d7d613c3-699e-47f8-b4e7-b73815a772ee)
 
+payment status
+
+![image](https://github.com/user-attachments/assets/1bf097e0-3a00-4a3d-9320-b70db8ce4478)
+
+
+few improvements are still left I am working on that for UI..
 
 
 ## Requirements
