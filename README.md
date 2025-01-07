@@ -2,6 +2,21 @@
 
 This project is a web-based dashboard that provides an interactive and responsive overview of various metrics, including financial data, customer and supplier records, and more. The dashboard dynamically fetches and displays data based on a selected date, and updates in real-time when the user changes the date.
 
+main ui
+
+![image](https://github.com/user-attachments/assets/2e7dc3bf-d924-4392-b09d-f0ea9dc55b8a)
+
+profile dropdown
+
+![image](https://github.com/user-attachments/assets/e1264e3a-bbc1-4b22-a897-f219e7ebcf38)
+
+notifications
+
+![image](https://github.com/user-attachments/assets/607a24b5-a1c7-4460-b0c9-2cdb7a44a293)
+
+
+
+
 ## Requirements
 
 - Replicate the dashboard UI as closely as possible to the provided Figma design.
