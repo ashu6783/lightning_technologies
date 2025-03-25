@@ -1,4 +1,4 @@
-# Lightning Technologies Dashboard
+# Overview Dashboard
 
 This project is a web-based dashboard that provides an interactive and responsive overview of various metrics, including financial data, customer and supplier records, and more. The dashboard dynamically fetches and displays data based on a selected date, and updates in real-time when the user changes the date.
 
